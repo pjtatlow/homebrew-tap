@@ -1,25 +1,25 @@
 class Clipsync < Formula
   desc "Clipboard sync across machines using SpacetimeDB with E2E encryption"
   homepage "https://github.com/pjtatlow/clipsync"
-  version "0.3.1"
+  version "0.4.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/pjtatlow/clipsync/releases/download/v0.3.1/clipsync-aarch64-apple-darwin.tar.xz"
-      sha256 "f0e79a4fb3efa2c4d2f8d3cb05b14a80c4f2c30713c0bec6319d6b3d57f49065"
+      url "https://github.com/pjtatlow/clipsync/releases/download/v0.4.0/clipsync-aarch64-apple-darwin.tar.xz"
+      sha256 "84a316ccb0be7d3ed5f8d7be92b6e9298db66b8818dbc20dc0a34ae48499ed14"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pjtatlow/clipsync/releases/download/v0.3.1/clipsync-x86_64-apple-darwin.tar.xz"
-      sha256 "e2bb08850972425daa4670c48c9e151a92f7b5683892b9f56662d5ae1c76d0ad"
+      url "https://github.com/pjtatlow/clipsync/releases/download/v0.4.0/clipsync-x86_64-apple-darwin.tar.xz"
+      sha256 "3d70f994265b5ba059678409d11560850d235a65b229e0f0c1fbc7c89a8d646d"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/pjtatlow/clipsync/releases/download/v0.3.1/clipsync-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "9e5ae3bcad82110a923784ef378aafc76347654cbd4c68ba2e2708a75ca4712c"
+      url "https://github.com/pjtatlow/clipsync/releases/download/v0.4.0/clipsync-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "c69a07459a99f6e7f8f4efd7961c3121536048d82e08dfeaf56e19fdd6582901"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pjtatlow/clipsync/releases/download/v0.3.1/clipsync-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "843bf96ac08c2862253223b97def45ba3cea40a25ae0b60b730908583f4e2c41"
+      url "https://github.com/pjtatlow/clipsync/releases/download/v0.4.0/clipsync-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "a3069cfc3d1c4c245cc30718321f712816fd5d6170cef33118613a4f9a78e120"
     end
   end
   license "MIT"
