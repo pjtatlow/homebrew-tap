@@ -1,25 +1,25 @@
 class Don < Formula
   desc "Boss of your dev environment"
   homepage "https://github.com/pjtatlow/don"
-  version "0.3.4"
+  version "0.4.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/pjtatlow/don/releases/download/v0.3.4/don-aarch64-apple-darwin.tar.xz"
-      sha256 "d454cf187da903a4f6bb254c3b4fccf09d20086373b3fe14d68c377dd95026fb"
+      url "https://github.com/pjtatlow/don/releases/download/v0.4.0/don-aarch64-apple-darwin.tar.xz"
+      sha256 "f52bfe9b45d5fc0fd0bf9e280eae177ec1c138642bab23478e66e57a838da752"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pjtatlow/don/releases/download/v0.3.4/don-x86_64-apple-darwin.tar.xz"
-      sha256 "5e98fd1a35cb435e964005b26e5394f3bc07678fb948773182a3219213d2d484"
+      url "https://github.com/pjtatlow/don/releases/download/v0.4.0/don-x86_64-apple-darwin.tar.xz"
+      sha256 "fd97cd48c2797ba73a16539a99b15bccbaf224c852627d81ecec7bf356111b60"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/pjtatlow/don/releases/download/v0.3.4/don-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "163d26a60f244a23149fcc3c06572c6cf0a4acecd4b239b500aeeebe412bd81b"
+      url "https://github.com/pjtatlow/don/releases/download/v0.4.0/don-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "b7762f53ca9e91386b128faf5028e03fe8a3f8bb3279028706a67d43bbf1407f"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pjtatlow/don/releases/download/v0.3.4/don-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "b0f95f06a1fba8b56ee434a0a61fd82e0489c14804a4ee5415e21835433c7fee"
+      url "https://github.com/pjtatlow/don/releases/download/v0.4.0/don-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "8ae1a9ddb82e61b88e72e7658109fad51e4740d3c29d765c3cf646bb916fdd18"
     end
   end
   license "MIT"
