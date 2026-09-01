@@ -1,25 +1,25 @@
 class Don < Formula
   desc "Boss of your dev environment"
   homepage "https://github.com/pjtatlow/don"
-  version "0.7.2"
+  version "0.8.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/pjtatlow/don/releases/download/v0.7.2/don-aarch64-apple-darwin.tar.xz"
-      sha256 "d5f9af6032545e97d089990915170197b33eecaf8af76738a94b627267426d62"
+      url "https://github.com/pjtatlow/don/releases/download/v0.8.0/don-aarch64-apple-darwin.tar.xz"
+      sha256 "84628ca8285682a948a5beffa700315b4c68c048f9f7448722a093861ca30210"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pjtatlow/don/releases/download/v0.7.2/don-x86_64-apple-darwin.tar.xz"
-      sha256 "4c85667c73a6a1261d9876325677f7d61fb979b0add5ea4daabb5388ad78ccb5"
+      url "https://github.com/pjtatlow/don/releases/download/v0.8.0/don-x86_64-apple-darwin.tar.xz"
+      sha256 "4e25595b4a1d2a9e382e69cfafcbf7d69499a978694b9713a5013ed9737705e1"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/pjtatlow/don/releases/download/v0.7.2/don-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "e45e5092be433bee44f6bcc150b2d68a1bbde9c050a62fa1692af8ae960521bc"
+      url "https://github.com/pjtatlow/don/releases/download/v0.8.0/don-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "967ab7854aff7afb26cae5d49f7058370d50effb14977469944250bb7bca6e31"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pjtatlow/don/releases/download/v0.7.2/don-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "061db0643c2bcdd67bc6c5c9b1669cc4104aa2e4373ad51ee8ba5dc7599fdefd"
+      url "https://github.com/pjtatlow/don/releases/download/v0.8.0/don-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "24dbcfe9d2e35b9af7b45702d3bf615a1c1ba1ba8ab8f8aab82f2cb477fea0cc"
     end
   end
   license "MIT"
@@ -47,10 +47,18 @@ class Don < Formula
   end
 
   def install
-    bin.install "don" if OS.mac? && Hardware::CPU.arm?
-    bin.install "don" if OS.mac? && Hardware::CPU.intel?
-    bin.install "don" if OS.linux? && Hardware::CPU.arm?
-    bin.install "don" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "don"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "don"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "don"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "don"
+    end
 
     install_binary_aliases!
 
