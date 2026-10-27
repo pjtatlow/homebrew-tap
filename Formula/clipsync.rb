@@ -1,25 +1,25 @@
 class Clipsync < Formula
-  desc "Clipboard sync across machines using SpacetimeDB with E2E encryption"
+  desc "Encrypted clipboard and configuration sync across machines using SpacetimeDB"
   homepage "https://github.com/pjtatlow/clipsync"
-  version "0.5.0"
+  version "0.6.0"
   if OS.mac?
     if Hardware::CPU.arm?
-      url "https://github.com/pjtatlow/clipsync/releases/download/v0.5.0/clipsync-aarch64-apple-darwin.tar.xz"
-      sha256 "9ab35b5b2b99322e01230f941ea9d1c7658bf8157142c8993510e9f720279fe3"
+      url "https://github.com/pjtatlow/clipsync/releases/download/v0.6.0/clipsync-aarch64-apple-darwin.tar.xz"
+      sha256 "ebe85acfa75001048e2fb41f473c4b61ee01a275bf681e2c920e5fd72092c483"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pjtatlow/clipsync/releases/download/v0.5.0/clipsync-x86_64-apple-darwin.tar.xz"
-      sha256 "95cbcd445b370dc552a078af217a1a41583e72197c4097ea17a275074279f73c"
+      url "https://github.com/pjtatlow/clipsync/releases/download/v0.6.0/clipsync-x86_64-apple-darwin.tar.xz"
+      sha256 "feacb168f6f161cb3367ba38691d17f94517750d2f78716455be111ebba1969c"
     end
   end
   if OS.linux?
     if Hardware::CPU.arm?
-      url "https://github.com/pjtatlow/clipsync/releases/download/v0.5.0/clipsync-aarch64-unknown-linux-gnu.tar.xz"
-      sha256 "badad0cbaf6908d038ac03ccff7ca379dc4ef93fd4e206c1d71892921b8cacf9"
+      url "https://github.com/pjtatlow/clipsync/releases/download/v0.6.0/clipsync-aarch64-unknown-linux-gnu.tar.xz"
+      sha256 "e4cd888c49886a3745057eb8465f4c195f149c9dc0943882adec3bdaf4ad356b"
     end
     if Hardware::CPU.intel?
-      url "https://github.com/pjtatlow/clipsync/releases/download/v0.5.0/clipsync-x86_64-unknown-linux-gnu.tar.xz"
-      sha256 "dee01d5b6845ddafb82b066e15e38f8405652196cfd94f43d5c2f997155ffb90"
+      url "https://github.com/pjtatlow/clipsync/releases/download/v0.6.0/clipsync-x86_64-unknown-linux-gnu.tar.xz"
+      sha256 "6e9f6ba395b3a0e695b65547d806e53f571ebd84e2182782623fec9783142257"
     end
   end
   license "MIT"
@@ -47,10 +47,18 @@ class Clipsync < Formula
   end
 
   def install
-    bin.install "clipsync" if OS.mac? && Hardware::CPU.arm?
-    bin.install "clipsync" if OS.mac? && Hardware::CPU.intel?
-    bin.install "clipsync" if OS.linux? && Hardware::CPU.arm?
-    bin.install "clipsync" if OS.linux? && Hardware::CPU.intel?
+    if OS.mac? && Hardware::CPU.arm?
+      bin.install "clipsync"
+    end
+    if OS.mac? && Hardware::CPU.intel?
+      bin.install "clipsync"
+    end
+    if OS.linux? && Hardware::CPU.arm?
+      bin.install "clipsync"
+    end
+    if OS.linux? && Hardware::CPU.intel?
+      bin.install "clipsync"
+    end
 
     install_binary_aliases!
 
